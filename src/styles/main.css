@@ -23,20 +23,114 @@ body {
     padding: 0;
 }
 
+/* Style the menu using a class selector */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/*Style the menu headings using a class selector*/
+.menu-heading {
+    text-align: center;
+    padding: 5rem 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+/*Style the menu paragraphs*/
+.menu p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    line-height: 1.6;
+    width: 80%;
+}
+
+/*Style the menu-items container */
+.menu-items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 1% auto;
+}
+
+/*Style each menu item*/
+.menu-item {
+    display: flex;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform .3s ease;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/*Menu-item hover*/
+.menu-item:hover {
+    transform: translate(-5px);
+}
+
+.menu-item h2,
+.menu-item p,
+.menu-item span {
+    color: #fff;
+    margin: 0;
+}
+
+.menu-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: .4rem 0;
+    flex: 1;
+}
+
+
+.menu-item h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+.menu-item p {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.menu-item span {
+    display: block;
+    font-size: 1rem;
+}
+
+
 .container-fluid {
-    /* create that white sidebar effect */
     border-left: 1px solid white;
     border-right: 1px solid white;
     min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 20px;
-    /* Removed top padding so nav is flush with top */
 }
 
 nav {
     background-color: var(--box-bg);
-    /* Dark blue top bar */
     padding: 20px 30px;
     display: flex;
     justify-content: center;
@@ -46,7 +140,6 @@ nav {
 
 #menu-toggle {
     display: none;
-    /* Hidden on desktop by default */
     flex-direction: column;
     justify-content: space-around;
     width: 40px;
@@ -62,14 +155,12 @@ nav {
     width: 100%;
     height: 3px;
     background-color: white;
-    /* White hamburger lines */
     border-radius: 4px;
     transition: all 0.3s linear;
 }
 
 nav ul.nav-menu {
     list-style-type: none;
-    /* Remove any bullets */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -85,33 +176,27 @@ nav li {
 nav a {
     color: var(--text-color);
     text-decoration: none;
-    /* No underlines in screenshots */
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-/* Responsive Rules for Mobile */
+
 @media screen and (max-width: 768px) {
     nav {
         justify-content: flex-start;
-        /* Align hamburger to the left */
         padding: 15px 20px;
         position: relative;
-        /* For the absolute dropdown */
     }
 
     nav ul.nav-menu {
         display: none;
-        /* Hide the links */
     }
 
     nav ul.nav-menu.show-menu {
         display: flex;
-        /* Show the links when button clicked */
         flex-direction: column;
         position: absolute;
         top: 60px;
-        /* just below the nav bar */
         left: 0;
         width: 100%;
         background-color: var(--box-bg);
@@ -121,18 +206,16 @@ nav a {
         gap: 20px;
         z-index: 100;
         border-bottom: 2px solid #00b4ff;
-        /* nice border to match background */
     }
 
     #menu-toggle {
         display: flex;
-        /* Show the hamburger */
     }
 }
 
-/* The dark curved container */
 #container {
-    background-color: var(--box-bg);
+    background-color: rgba(15, 45, 58, 0.85);
+    backdrop-filter: blur(5px);
     color: var(--text-color);
     max-width: 800px;
     margin: 40px auto;
@@ -195,7 +278,7 @@ footer p {
     margin: 5px 0;
 }
 
-/* QuickBites Horizontal Gallery */
+
 .gallery {
     display: flex;
     flex-direction: row;
@@ -215,7 +298,6 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform 0.2s;
-    /* cool hover effect! */
 }
 
 .gallery .item:hover {
